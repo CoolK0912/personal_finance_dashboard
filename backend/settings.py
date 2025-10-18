@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'transaction',
     'user',
     'account',
+    'budget',
+    'category',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

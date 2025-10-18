@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Transaction
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, this is the Transaction app index view.")
+    latest_transaction_list = Transaction.objects.order_by("-pub_date")[:5]
+    output = ", ".join([t.description for t in latest_transaction_list])
+    return HttpResponse(output)
 
 def add_transaction(request):
     # Logic to add a transaction would go here
