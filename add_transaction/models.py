@@ -13,7 +13,7 @@ class Transaction(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='transactions') # which user made the transaction
     amount = models.DecimalField(max_digits=10, decimal_places=2) # monetary amount
     description = models.CharField(max_length=255) # message associated with the transaction
-    date = models.DateTimeField(auto_now_add=True) # when did the transaction occur
+    date = models.DateTimeField("Date Posted") # when did the transaction occur
     account = models.ForeignKey('Account', on_delete=models.CASCADE, related_name='transactions') # which account the transaction belongs to
 
     def __str__(self):
