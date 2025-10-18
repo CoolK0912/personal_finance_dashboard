@@ -1,4 +1,5 @@
 from django.db import models
+from user.models import User
 
 # Create your models here.
 class Transaction(models.Model):
@@ -6,7 +7,6 @@ class Transaction(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2) # monetary amount
     description = models.CharField(max_length=255) # message associated with the transaction
     date = models.DateTimeField("Date Posted") # when did the transaction occur
-    account = models.ForeignKey('Account', on_delete=models.CASCADE, related_name='transactions') # which account the transaction belongs to
 
     def __str__(self):
         return f"{self.description}: {self.amount} on {self.date}"

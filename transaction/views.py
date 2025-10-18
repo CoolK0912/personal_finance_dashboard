@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, this is the add_transaction app index view.")
+    return HttpResponse("Hello, this is the Transaction app index view.")
 
 def add_transaction(request):
     # Logic to add a transaction would go here
