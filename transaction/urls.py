@@ -1,13 +1,12 @@
 from django.urls import path, include
 from . import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
 app_name = 'transaction'
 
 urlpatterns = [
-    path('add_transaction/', views.add_transaction, name='add_transaction'),
-    path('view_transactions/', views.view_transactions, name='view_transactions'),
-    path('delete_transaction/<int:transaction_id>/', views.delete_transaction, name='delete_transaction'),
-    path('transactions/', views.transaction_list, name='transaction_list'),
-    path('transactions/<int:pk>/', views.transaction_detail, name='transaction_detail'),
+    path('transactions/', views.TransactionList.as_view()),
+    path('transactions/<int:pk>/', views.TransactionDetail.as_view()),
     # Add more URL patterns here
 ]
+urlpatterns = format_suffix_patterns(urlpatterns)

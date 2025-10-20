@@ -11,5 +11,12 @@ class TransactionSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Transaction
-        fields = ['id', 'user', 'amount', 'description', 'date', 'account', 'budget_category', 'type']
+        fields = ['id', 'user', 'user_username', 'amount', 'description', 'date', 'account', 'account_name', 'budget_category' , 'budget_category_name', 'type']
         read_only_fields = ['id', 'date']
+
+class UserSerializer(serializers.ModelSerializer):
+    transaction = serializers.PrimaryKeyRelatedField(many=True, queryset=Transaction.objects.all())
+
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'transaction']
