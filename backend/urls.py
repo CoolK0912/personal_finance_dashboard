@@ -17,16 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from transaction import views
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import Reverse
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'transactions': Reverse('transaction:transaction-list', request=request, format=format),
+    })
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', api_root, name='api-root'),
     path('api/', include('transaction.urls')),
-    path("users/", views.UserList.as_view()),
-    path("users/<int:pk>/", views.UserDetail.as_view()),
-
-]
-
-urlpatterns += [
-    path("api-auth/", include("rest_framework.urls")),
+    path('api-auth/', include('rest_framework.urls')),
 ]
 
