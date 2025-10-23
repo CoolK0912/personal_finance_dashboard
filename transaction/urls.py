@@ -1,12 +1,14 @@
 from django.urls import path, include
 from . import views
-from rest_framework.urlpatterns import format_suffix_patterns
+from rest_framework.routers import DefaultRouter
 
 app_name = 'transaction'
 
+router = DefaultRouter()
+router.register(r"transactions", views.TransactionViewSet, basename = "transaction")
+router.register(r"users", views.UserViewSet, basename = "user")
+
+
 urlpatterns = [
-    path('transactions/', views.TransactionList.as_view()),
-    path('transactions/<int:pk>/', views.TransactionDetail.as_view()),
-    # Add more URL patterns here
+    path("", include(router.urls)),
 ]
-urlpatterns = format_suffix_patterns(urlpatterns)

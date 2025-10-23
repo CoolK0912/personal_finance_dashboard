@@ -1,21 +1,17 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Account
+from rest_framework import permissions
+from rest_framework import viewsets
+from account.serializers import AccountSerializer
 
+class AccountViewSet(viewsets.ModelViewSet):
+    serializer_class = AccountSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
-# Create your views here.
-def view_accounts(request):
-   # Logic to view accounts would go here
-   return HttpResponse("Here are the accounts.")
-
-
-def add_account(request):
-   # Logic to add an account would go here
-   return HttpResponse("Account added successfully.")
-
-
-def delete_account(request, account_id):
-   # Logic to delete an account would go here
-   return HttpResponse(f"Account {account_id} deleted successfully.")
+    def get_queryset(self):
+        return Account.objects.filter(user=self.request.user)
+    
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 
 
