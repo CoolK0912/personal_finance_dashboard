@@ -1,18 +1,16 @@
-from django.shortcuts import render
-from http import HttpResponse
-from django.contrib.auth.models import User
-# Create your views here.
+from .models import Category
+from rest_framework import permissions
+from rest_framework import viewsets
+from category.serializers import CategorySerializer
 
-def view_categories(request):
-    # Logic to view categories would go here
-    return HttpResponse("Hello, this is the view_categories view.")
+class CategoryViewSet(viewsets.ModelViewSet):
+    serializer_class = CategorySerializer
+    permission_classes = [permissions.IsAuthenticated]
 
-def add_category(request):
-    # Logic to add a category would go here
-    return HttpResponse("Hello, this is the add_category view.")
-
-def delete_category(request, category_id):
-    # Logic to delete a category would go here
-    return HttpResponse(f"Hello, this is the delete_category view for category {category_id}.")
+    def get_queryset(self):
+        return Category.objects.filter(user=self.request.user)
+    
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 

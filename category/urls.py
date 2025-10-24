@@ -1,7 +1,12 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
-app_name = 'budget'
+from rest_framework.routers import DefaultRouter
 
-path('view_budgets/', views.view_budgets, name='view_budgets'),
-path('add_budget/', views.add_budget, name='add_budget'),
-path('delete_budget/<int:budget_id>/', views.delete_budget, name='delete_budget'),
+app_name = 'category'
+
+router = DefaultRouter()
+router.register(r"categories", views.CategoryViewSet, basename = 'category')
+
+urlpatterns = [
+    path("", include(router.urls)),
+]

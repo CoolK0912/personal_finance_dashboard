@@ -1,8 +1,12 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from rest_framework.routers import DefaultRouter
+
 app_name = 'budget'
 
-path('view_budgets/', views.view_budgets, name='view_budgets'),
-path('add_budget/', views.add_budget, name='add_budget'),
-path('delete_budget/<int:budget_id>/', views.delete_budget, name='delete_budget'),
-path('update_budget/<int:budget_id>/', views.update_budget, name='update_budget'),
+router = DefaultRouter()
+router.register(r"budgets", views.BudgetViewSet, basename = 'budget')
+
+urlpatterns = [
+    path("", include(router.urls)),
+]

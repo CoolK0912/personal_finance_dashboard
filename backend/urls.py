@@ -31,6 +31,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', api_root, name='api-root'),
     path('api/', include('account.urls')),
+    path('api/', include('budget.urls')),
+    path('api/', include('category.urls')),
     path('api/', include('transaction.urls')),
     path('api-auth/', include('rest_framework.urls')),
 ]
