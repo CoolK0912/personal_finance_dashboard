@@ -1,0 +1,303 @@
+{
+  "test_run": {
+    "timestamp": "2026-02-14T14:01:09.525873",
+    "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "django_version": "5.2.8"
+  },
+  "summary": {
+    "total": 41,
+    "passed": 41,
+    "failed": 0,
+    "errors": 0,
+    "pass_rate": "100.0%"
+  },
+  "results": [
+    {
+      "test": "test_user_creation",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:04.768525"
+    },
+    {
+      "test": "test_account_creation",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:04.917975"
+    },
+    {
+      "test": "test_account_balance_precision",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:05.066221"
+    },
+    {
+      "test": "test_category_creation",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:05.214738"
+    },
+    {
+      "test": "test_budget_creation",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:05.365637"
+    },
+    {
+      "test": "test_transaction_creation_deposit",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:05.514565"
+    },
+    {
+      "test": "test_transaction_creation_withdrawal",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:05.671063"
+    },
+    {
+      "test": "test_transaction_with_category",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:05.823685"
+    },
+    {
+      "test": "test_category_budget_relationship",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:05.976133"
+    },
+    {
+      "test": "test_account_user_relationship",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:06.128567"
+    },
+    {
+      "test": "test_account_serializer_valid",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:06.276225"
+    },
+    {
+      "test": "test_account_serializer_output",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:06.426502"
+    },
+    {
+      "test": "test_budget_serializer_valid",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:06.577688"
+    },
+    {
+      "test": "test_category_serializer_valid",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:06.727227"
+    },
+    {
+      "test": "test_transaction_serializer_valid",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:06.876732"
+    },
+    {
+      "test": "test_transaction_serializer_readonly_fields",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.031437"
+    },
+    {
+      "test": "test_api_accounts_list",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.203886"
+    },
+    {
+      "test": "test_api_accounts_create",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.207157"
+    },
+    {
+      "test": "test_api_accounts_detail",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.208106"
+    },
+    {
+      "test": "test_api_transactions_list",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.209220"
+    },
+    {
+      "test": "test_api_transactions_create",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.211244"
+    },
+    {
+      "test": "test_api_budgets_list",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.212030"
+    },
+    {
+      "test": "test_api_budgets_create",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.216066"
+    },
+    {
+      "test": "test_api_categories_list",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.216973"
+    },
+    {
+      "test": "test_api_categories_create",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.219357"
+    },
+    {
+      "test": "test_api_unauthorized_access",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.220047"
+    },
+    {
+      "test": "test_api_token_obtain",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.366839"
+    },
+    {
+      "test": "test_api_user_registration",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.535894"
+    },
+    {
+      "test": "test_api_user_detail",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.536851"
+    },
+    {
+      "test": "test_budget_percentage_calculation",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.689454"
+    },
+    {
+      "test": "test_budget_over_budget_detection",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.844332"
+    },
+    {
+      "test": "test_transaction_type_validation",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:07.996439"
+    },
+    {
+      "test": "test_user_total_balance_calculation",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:08.147692"
+    },
+    {
+      "test": "test_transaction_sum_by_type",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:08.300216"
+    },
+    {
+      "test": "test_category_spending_calculation",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:08.454572"
+    },
+    {
+      "test": "test_zero_balance_account",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:08.603940"
+    },
+    {
+      "test": "test_large_balance",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:08.755208"
+    },
+    {
+      "test": "test_zero_budget",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:08.908872"
+    },
+    {
+      "test": "test_empty_description",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:09.059620"
+    },
+    {
+      "test": "test_budget_same_start_end_date",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:09.210895"
+    },
+    {
+      "test": "test_multiple_users_isolation",
+      "status": "PASS",
+      "message": "Test passed successfully",
+      "details": "",
+      "timestamp": "2026-02-14T14:01:09.522806"
+    }
+  ]
+}

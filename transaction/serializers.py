@@ -6,13 +6,13 @@ from category.models import Category
 
 class TransactionSerializer(serializers.ModelSerializer):
     user_username = serializers.ReadOnlyField(source='user.username')
-    account_name = serializers.ReadOnlyField(source='account.name')
+    account_name = serializers.ReadOnlyField(source='account.name_account')
     budget_category_name = serializers.ReadOnlyField(source='budget_category.name')
-    
+
     class Meta:
         model = Transaction
         fields = ['id', 'user', 'user_username', 'amount', 'description', 'date', 'account', 'account_name', 'budget_category' , 'budget_category_name', 'type']
-        read_only_fields = ['id', 'date']
+        read_only_fields = ['id', 'date', 'user']
 
 class UserSerializer(serializers.ModelSerializer):
     transaction = serializers.PrimaryKeyRelatedField(many=True, queryset=Transaction.objects.all())

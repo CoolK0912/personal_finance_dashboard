@@ -20,11 +20,18 @@ from transaction import views
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 @api_view(['GET'])
 def api_root(request, format=None):
     return Response({
         'transactions': reverse('transaction:transaction-list', request=request, format=format),
+        'accounts': reverse('account:account-list', request=request, format=format),
+        'budgets': reverse('budget:budget-list', request=request, format=format),
+        'categories': reverse('category:category-list', request=request, format=format),
     })
 
 urlpatterns = [
@@ -34,6 +41,8 @@ urlpatterns = [
     path('api/', include('budget.urls')),
     path('api/', include('category.urls')),
     path('api/', include('transaction.urls')),
+    path('api/', include('user.urls')),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api-auth/', include('rest_framework.urls')),
 ]
-

@@ -1,6 +1,9 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
+
 app_name = 'user'
 
-path('user_profile/<int:user_id>/', views.user_profile, name='user_profile'),
-path('balance_summary/', views.balance_summary, name='balance_summary'),
+urlpatterns = [
+    path('register/', views.RegisterView.as_view(), name='register'),
+    path('user/', views.UserDetailView.as_view(), name='user_detail'),
+]

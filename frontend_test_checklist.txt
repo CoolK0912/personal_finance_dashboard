@@ -1,0 +1,66 @@
+
+FRONTEND COMPONENT TESTS
+========================
+
+The following frontend components should be manually tested or tested with Jest/React Testing Library:
+
+1. AuthContext Tests:
+   - [ ] User login stores JWT token in localStorage
+   - [ ] User logout removes JWT token from localStorage
+   - [ ] Token refresh works when access token expires
+   - [ ] Protected routes redirect to login when not authenticated
+
+2. Dashboard Tests:
+   - [ ] Summary cards display correct totals
+   - [ ] Recent transactions show last 5 transactions
+   - [ ] Budget progress bars show correct percentages
+   - [ ] Quick transaction modal opens and submits correctly
+   - [ ] Sidebar navigation works on desktop
+   - [ ] Mobile quick actions work on mobile
+
+3. Accounts Page Tests:
+   - [ ] Account list loads correctly
+   - [ ] Create account form works
+   - [ ] Edit account updates correctly
+   - [ ] Delete account removes from list
+   - [ ] Account selection shows transaction history
+   - [ ] Total balance calculates correctly
+
+4. Transactions Page Tests:
+   - [ ] Transaction list loads correctly
+   - [ ] Filter by type (All/Income/Expenses) works
+   - [ ] Create transaction form validates required fields
+   - [ ] Edit transaction updates correctly
+   - [ ] Delete transaction removes from list
+   - [ ] Summary cards show correct totals
+
+5. Budgets Page Tests:
+   - [ ] Budget list loads correctly
+   - [ ] Account filter works
+   - [ ] Progress bars show correct percentage
+   - [ ] Status badges display correctly (On Track/Warning/Over/Ended)
+   - [ ] Create budget form works
+   - [ ] Edit budget updates correctly
+   - [ ] Delete budget removes from list
+   - [ ] Category limit setter works
+
+6. Categories Page Tests:
+   - [ ] Category list loads correctly
+   - [ ] Create category form works
+   - [ ] Edit category updates correctly
+   - [ ] Delete category removes from list
+   - [ ] Budget linking works
+
+7. Login/Register Tests:
+   - [ ] Login form validates required fields
+   - [ ] Login with valid credentials redirects to dashboard
+   - [ ] Login with invalid credentials shows error
+   - [ ] Register form validates all fields
+   - [ ] Register with valid data creates account and logs in
+   - [ ] Register with existing username shows error
+
+8. Navigation Tests:
+   - [ ] Navbar shows correct links based on auth state
+   - [ ] Logout button works
+   - [ ] Protected routes redirect when not logged in
+   - [ ] Public routes redirect when logged in
